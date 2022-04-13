@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * Bean을 정의한 Context
+ */
 @Configuration
 public class AppConfiguration {
 
