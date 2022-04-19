@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 @PropertySource("version.properties")
 public class VersionProvider {
-  private final String version;
+	private final String version;
 
-  public VersionProvider(@Value("${version:v0.0.0}") String version) {
-    this.version = version;
-  }
+	public VersionProvider(@Value("${version:v0.0.0}") String version) {
+		this.version = version;
+	}
 
-  public String getVersion() {
-    return version;
-  }
-  
+	public String getVersion() {
+		return version;
+	}
+
 }

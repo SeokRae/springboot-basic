@@ -8,11 +8,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class MemoryOrderRepository implements OrderRepository {
-  private final Map<UUID, Order> storage = new ConcurrentHashMap<>();
+	private final Map<UUID, Order> storage = new ConcurrentHashMap<>();
 
-  @Override
-  public Order insert(Order order) {
-    storage.put(order.getOrderId(), order);
-    return order;
-  }
+	@Override
+	public Order insert(Order order) {
+		storage.put(order.getOrderId(), order);
+		return order;
+	}
 }

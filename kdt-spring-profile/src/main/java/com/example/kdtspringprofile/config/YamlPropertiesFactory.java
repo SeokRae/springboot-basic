@@ -10,13 +10,13 @@ import java.io.IOException;
 
 public class YamlPropertiesFactory implements PropertySourceFactory {
 
-  @Override
-  public PropertySource<?> createPropertySource(String s, EncodedResource encodedResource) throws IOException {
-    var yamlPropertiesFactoryBean = new YamlPropertiesFactoryBean();
-    yamlPropertiesFactoryBean.setResources(encodedResource.getResource());
+	@Override
+	public PropertySource<?> createPropertySource(String s, EncodedResource encodedResource) throws IOException {
+		var yamlPropertiesFactoryBean = new YamlPropertiesFactoryBean();
+		yamlPropertiesFactoryBean.setResources(encodedResource.getResource());
 
-    var properties = yamlPropertiesFactoryBean.getObject();
-    return new PropertiesPropertySource(encodedResource.getResource().getFilename(), properties);
-  }
+		var properties = yamlPropertiesFactoryBean.getObject();
+		return new PropertiesPropertySource(encodedResource.getResource().getFilename(), properties);
+	}
 
 }
