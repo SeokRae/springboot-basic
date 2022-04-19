@@ -5,7 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@PropertySource("version.properties")
+@PropertySource("/version.properties")
 public class VersionProvider {
 	private final String version;
 
