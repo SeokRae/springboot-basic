@@ -3,7 +3,6 @@ package com.example.kdtspringtest.order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -23,15 +22,15 @@ public class OrderProperties implements InitializingBean {
 
 	private String description;
 
-	@Value("${JAVA_HOME}")
-	private String javaHome;
+//	@Value("${JAVA_HOME}")
+//	private String javaHome;
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		logger.debug("[OrderProperties] version -> {}", version);
 		logger.debug("[OrderProperties] minimumOrderAmount -> {}", minimumOrderAmount);
 		logger.debug("[OrderProperties] supportVendors -> {}", supportVendors);
-		logger.debug("[OrderProperties] javaHome -> {}", javaHome);
+//		logger.debug("[OrderProperties] javaHome -> {}", javaHome);
 	}
 
 	public String getVersion() {
@@ -66,8 +65,8 @@ public class OrderProperties implements InitializingBean {
 		this.description = description;
 	}
 
-	public String getJavaHome() {
-		return javaHome;
-	}
+//	public String getJavaHome() {
+//		return javaHome;
+//	}
 
 }

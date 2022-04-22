@@ -12,26 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class HamcrestAssertionTests {
 
-  @Test
-  @DisplayName("여러 hamcrest matcher 테스트")
-  void hamcrestTest() {
-    assertEquals(2, 1 + 1);
-    assertThat(1 + 1, equalTo(2));
-    assertThat(1 + 1, is(2));
-    assertThat(1 + 1, anyOf(is(1), is(2)));
+	@Test
+	@DisplayName("여러 hamcrest matcher 테스트")
+	void hamcrestTest() {
+		assertEquals(2, 1 + 1);
+		assertThat(1 + 1, equalTo(2));
+		assertThat(1 + 1, is(2));
+		assertThat(1 + 1, anyOf(is(1), is(2)));
 
-    assertNotEquals(1, 1 + 1);
-    assertThat(1 + 1, not(equalTo(1)));
-  }
+		assertNotEquals(1, 1 + 1);
+		assertThat(1 + 1, not(equalTo(1)));
+	}
 
-  @Test
-  @DisplayName("컬렉션에 대한 matcher 테스트")
-  void hamcrestListMatcherTest() {
-    var prices = List.of(2, 3, 4);
-    assertThat(prices, hasSize(3));
-    assertThat(prices, everyItem(greaterThan(1)));
-    assertThat(prices, containsInAnyOrder(3, 4, 2));
-    assertThat(prices, hasItem(greaterThanOrEqualTo(2)));
-  }
+	@Test
+	@DisplayName("컬렉션에 대한 matcher 테스트")
+	void hamcrestListMatcherTest() {
+		var prices = List.of(2, 3, 4);
+		assertThat(prices, hasSize(3));
+		assertThat(prices, everyItem(greaterThan(1)));
+		assertThat(prices, containsInAnyOrder(3, 4, 2));
+		assertThat(prices, hasItem(greaterThanOrEqualTo(2)));
+	}
 
 }
