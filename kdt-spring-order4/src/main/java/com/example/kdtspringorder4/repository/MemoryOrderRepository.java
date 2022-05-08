@@ -2,12 +2,10 @@ package com.example.kdtspringorder4.repository;
 
 
 import com.example.kdtspringorder4.domain.order.Order;
-import com.example.kdtspringorder4.exception.InsertOrderFailException;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 

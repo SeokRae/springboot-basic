@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * 주문 정보에 대한 도메인은 어떤 부분을 테스트 해야 할까?
- *
  */
 class OrderCreateTest {
 	private UUID orderId;
