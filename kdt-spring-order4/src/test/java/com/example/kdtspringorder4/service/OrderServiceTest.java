@@ -79,7 +79,7 @@ class OrderServiceTest {
 	@DisplayName("고정 할인 바우처를 사용하여 주문 생성")
 	@Test
 	void testCase2() {
-		Voucher voucher = new FixedAmountVoucher(voucherId, 10L);
+		Voucher voucher = FixedAmountVoucher.of(voucherId, 10L);
 		Order order = new Order(orderId, customerId, orderItems, voucher);
 
 		given(voucherService.getVoucher(voucherId)).willReturn(voucher);
@@ -97,7 +97,7 @@ class OrderServiceTest {
 	@DisplayName("비율 할인 바우처를 사용하여 주문 생성")
 	@Test
 	void testCase3() {
-		Voucher voucher = new PercentDiscountVoucher(voucherId, 10L);
+		Voucher voucher = PercentDiscountVoucher.of(voucherId, 10L);
 		Order order = new Order(orderId, customerId, orderItems, voucher);
 
 		given(voucherService.getVoucher(voucherId)).willReturn(voucher);

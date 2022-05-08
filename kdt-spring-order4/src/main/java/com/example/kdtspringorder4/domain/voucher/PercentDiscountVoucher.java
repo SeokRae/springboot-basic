@@ -1,23 +1,32 @@
 package com.example.kdtspringorder4.domain.voucher;
 
+import com.example.kdtspringorder4.exception.PercentOverException;
+
 import java.util.UUID;
 
 public class PercentDiscountVoucher extends Voucher {
 
-	public PercentDiscountVoucher(UUID voucherId, long percent) {
-		super(voucherId, percent);
+	private PercentDiscountVoucher(UUID voucherId, long percent) {
+		super(voucherId, percent, VoucherType.PERCENT);
+	}
+
+	public static PercentDiscountVoucher of(UUID voucherId, long percent) {
+		validPercent(percent);
+		return new PercentDiscountVoucher(voucherId, percent);
 	}
 
 	@Override
-	public long discount(long originAmount) {
-		return originAmount - (long) (originAmount * (amount / (double) 100));
+	public long discount(final long originAmount) {
+		return originAmount - (long) (originAmount * (super.getAmount() / (double) 100));
 	}
 
-	@Override
-	public String toString() {
-		return "PercentDiscountVoucher{" +
-				"voucherId=" + voucherId +
-				", percent=" + amount +
-				'}';
+	private static void validPercent(final long percent) {
+		if(isOutOfBoundsPercent(percent)) {
+			throw new PercentOverException("퍼센테이지 값의 범위를 벗어납니다. : {}", percent);
+		}
+	}
+
+	private static boolean isOutOfBoundsPercent(final long percent) {
+		return percent < 0 || percent > 100;
 	}
 }

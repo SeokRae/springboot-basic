@@ -14,7 +14,7 @@ class PercentDiscountVoucherTest {
 	void testCase1() {
 		UUID voucherId = UUID.randomUUID();
 
-		Voucher voucher = new PercentDiscountVoucher(voucherId, 10L);
+		Voucher voucher = PercentDiscountVoucher.of(voucherId, 10L);
 		long actual = voucher.discount(2000L);
 
 		assertThat(voucher).isInstanceOf(PercentDiscountVoucher.class);

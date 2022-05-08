@@ -5,7 +5,7 @@ import java.util.UUID;
 public class DefaultAmountVoucher extends Voucher {
 
 	public DefaultAmountVoucher() {
-		super(UUID.randomUUID(), 0);
+		super(UUID.randomUUID(), 0, VoucherType.DEFAULT);
 	}
 
 	@Override
