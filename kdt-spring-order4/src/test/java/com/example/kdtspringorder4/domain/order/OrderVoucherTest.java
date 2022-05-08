@@ -53,7 +53,7 @@ class OrderVoucherTest {
 
 		UUID voucherId = UUID.randomUUID();
 
-		Order actual = new Order(orderId, customerId, sampleOrderItems, new FixedAmountVoucher(voucherId, 10L));
+		Order actual = new Order(orderId, customerId, sampleOrderItems, FixedAmountVoucher.of(voucherId, 10L));
 
 		assertThat(actual.totalAmount()).isEqualTo(9990L);
 	}
@@ -65,7 +65,7 @@ class OrderVoucherTest {
 
 		UUID voucherId = UUID.randomUUID();
 
-		Order actual = new Order(orderId, customerId, sampleOrderItems, new PercentDiscountVoucher(voucherId, 10L));
+		Order actual = new Order(orderId, customerId, sampleOrderItems, PercentDiscountVoucher.of(voucherId, 10L));
 
 		assertThat(actual.totalAmount()).isEqualTo(9000L);
 	}

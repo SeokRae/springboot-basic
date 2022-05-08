@@ -14,7 +14,7 @@ class FixedAmountVoucherTest {
 	void testCase1() {
 		UUID voucherId = UUID.randomUUID();
 
-		Voucher voucher = new FixedAmountVoucher(voucherId, 10L);
+		Voucher voucher = FixedAmountVoucher.of(voucherId, 10L);
 		long actual = voucher.discount(1000);
 
 		assertThat(voucher).isInstanceOf(FixedAmountVoucher.class);
