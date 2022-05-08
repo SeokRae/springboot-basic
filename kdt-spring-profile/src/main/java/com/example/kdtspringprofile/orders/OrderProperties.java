@@ -1,7 +1,6 @@
 package com.example.kdtspringprofile.orders;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,7 +18,7 @@ public class OrderProperties implements InitializingBean {
 	private List<String> supportVendors;
 
 	private String description;
-//
+
 //	@Value("${JAVA_HOME}")
 //	private String javaHome;
 
@@ -67,6 +66,7 @@ public class OrderProperties implements InitializingBean {
 //		this.javaHome = javaHome;
 //	}
 //
+
 //	public String getJavaHome() {
 //		return javaHome;
 //	}
