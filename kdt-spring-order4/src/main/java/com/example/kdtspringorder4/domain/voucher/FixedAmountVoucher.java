@@ -4,22 +4,14 @@ import com.example.kdtspringorder4.exception.RangeAmountException;
 
 import java.util.UUID;
 
-public class FixedAmountVoucher implements Voucher {
-
-	private final UUID voucherId;
-	private final long amount;
+public class FixedAmountVoucher extends Voucher {
 
 	public FixedAmountVoucher(UUID voucherId, long amount) {
+		super(voucherId, amount);
 		isValidAmount(amount);
-		this.voucherId = voucherId;
-		this.amount = amount;
 	}
 
 	@Override
-	public UUID getVoucherId() {
-		return voucherId;
-	}
-
 	public long discount(long originAmount) {
 		return originAmount - amount;
 	}

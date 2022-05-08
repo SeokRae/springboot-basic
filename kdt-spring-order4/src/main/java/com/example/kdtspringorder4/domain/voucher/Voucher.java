@@ -2,10 +2,21 @@ package com.example.kdtspringorder4.domain.voucher;
 
 import java.util.UUID;
 
-public interface Voucher {
+public abstract class Voucher implements Discountable {
 
-	UUID getVoucherId();
+	protected final UUID voucherId;
+	protected final long amount;
 
-	long discount(long originAmount);
+	protected Voucher(UUID voucherId, long amount) {
+		this.voucherId = voucherId;
+		this.amount = amount;
+	}
 
+	public long getAmount() {
+		return amount;
+	}
+
+	public UUID getVoucherId() {
+		return voucherId;
+	}
 }

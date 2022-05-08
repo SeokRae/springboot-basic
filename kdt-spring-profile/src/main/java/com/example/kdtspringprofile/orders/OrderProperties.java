@@ -61,6 +61,11 @@ public class OrderProperties implements InitializingBean {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+//
+//	public void setJavaHome(String javaHome) {
+//		this.javaHome = javaHome;
+//	}
+//
 
 //	public String getJavaHome() {
 //		return javaHome;

@@ -3,7 +3,6 @@ package com.example.kdtspringorder4.shell;
 import com.example.kdtspringorder4.AppConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class CommandLineApplication {

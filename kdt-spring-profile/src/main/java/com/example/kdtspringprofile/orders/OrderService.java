@@ -1,6 +1,6 @@
 package com.example.kdtspringprofile.orders;
 
-import org.prgrms.kdt.voucher.VoucherService;
+import com.example.kdtspringprofile.vouchers.VoucherService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
