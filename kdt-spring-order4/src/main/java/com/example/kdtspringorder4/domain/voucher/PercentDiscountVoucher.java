@@ -6,6 +6,9 @@ import java.util.UUID;
 
 public class PercentDiscountVoucher extends Voucher {
 
+	public static final int MIN_PERCENT = 0;
+	public static final int MAX_PERCENT = 100;
+
 	private PercentDiscountVoucher(UUID voucherId, long percent) {
 		super(voucherId, percent, VoucherType.PERCENT);
 	}
@@ -27,6 +30,6 @@ public class PercentDiscountVoucher extends Voucher {
 	}
 
 	private static boolean isOutOfBoundsPercent(final long percent) {
-		return percent < 0 || percent > 100;
+		return percent < MIN_PERCENT || percent > MAX_PERCENT;
 	}
 }
